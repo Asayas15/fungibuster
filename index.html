@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="heyy">
+    <h1 class="title">Oyster Mushroom Disease Detector</h1>
+  </header>     
+    <div id="disclaimerModal" class="modal">
+        <div class="modal-content">
+          <h2>Disclaimer</h2>
+          <p>This Oyster Mushroom Disease Classifier is currently under development. Predictions may not always be accurate and should be used for informational purposes only. Always consult agricultural experts for critical decisions.</p>
+          <button onclick="closeDisclaimer()">I Understand</button>
+        </div>
+      </div>      
+      
+      <div class="container" style="margin-top: 50px;">
+
+        <!-- File Upload and Capture Buttons -->
+        <div class="file-buttons">
+          <label for="imageInput" class="custom-file-upload">Select Image</label>
+          <input type="file" id="imageInput" accept="image/*" style="display: none;">
+          <button id="openCameraBtn" class="capture-btn">Capture Image</button>
+        </div>
+        
+        <div class="preview-wrapper" id="previewWrapper" style="display:none;">
+          <div class="image-container">
+            <img id="preview" src="" alt="Image preview" />
+            <div id="scanner" class="scanner" style="display: none;"></div>
+            <button id="closePreviewBtn" class="close-btn">&times;</button>
+          </div>
+        </div>
+        
+        <div id="cameraWrapper" style="display: none;">
+          <video id="camera" autoplay></video>
+          <button id="closeCameraBtn" class="close-btn">&times;</button>
+          <div id="buttonsContainer">
+            <button id="capturePhotoBtn">
+              <i class="fas fa-camera"></i>
+            </button>
+            <button id="switchCameraBtn">
+              <i class="fas fa-sync-alt"></i>
+            </button>
+          </div>
+        </div>
+        
+        <!-- NEW: Separator Line -->
+        <hr style="margin: 20px 0; border: 0; height: 1px; background: #ccc;">
+        
+        <!-- Predict Button -->
+        <button onclick="predict()" id="predictBtn">Predict Disease</button>
+        
+        <div id="loading" style="display: none;">Loading...</div>
+        
+        <div id="results" style="display: none;">
+          <h3 id="resultsTitle">Results:</h3>
+          <div id="resultsContent"></div>
+        </div>
+        
+        
+        
+    </div>
+
+    <div class="language-selector" style="background-color: rgba(255, 255, 255, 0.8); padding: 8px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);">
+      <label><input type="radio" name="language" value="en" checked> English</label>
+      <label><input type="radio" name="language" value="fil"> Filipino</label>
+      <label><input type="radio" name="language" value="ilo"> Ilocano</label>
+    </div> 
+  <script src="script.js"></script>
+</body>
+<footer class="footer">
+  <div class="footer-content">
+    <img src="https://res.cloudinary.com/dvxvwdrql/image/upload/v1745834796/csulogo.dca0af26_lz6uqa.png" alt="CSU Logo" class="footer-logo">
+    <div class="footer-text">
+      <p>CAGAYAN STATE UNIVERSITY</p>
+      <p>College of Engineering and Architecture<br>Philippine Society of Agricultural and Biosystems Engineers Pre-professional Group</p>
+    </div>
+    <div class="footer-contact">
+      <p><i class="fas fa-globe"></i> www.facebook.com</p>
+      <p><i class="fas fa-phone"></i> 0901-903-5975</p>
+      <p><i class="fas fa-envelope"></i> jhunard.asayas24@gmail.com</p>
+    </div>
+  </div>
+</footer>
+
+</html>
